@@ -13,6 +13,11 @@ package {
   man: ensure => installed
 }
 
+# Vim
+package {
+  'vim-enhanced': ensure => installed
+}
+
 # Ruby gems & build tools
 package {
   'ruby-devel': ensure => installed
@@ -22,7 +27,7 @@ package {
   require => [ Package[ruby-devel] ]
 }
 
-# Compass
+# Compass framework
 package {
   'compass': ensure => 'installed',
   provider => 'gem',
