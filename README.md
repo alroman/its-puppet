@@ -2,6 +2,14 @@
 
 Basic Puppet configuration to start up a Vagrant dev box.
 
+## Components
+
+ - PHP + extensions
+ - MySQL
+ - Apache2
+ - phpMyAdmin
+ - Ruby/Compass
+
 ## Instructions
 
 Clone this repo, then go into the project folder you just created and start vagrant.
@@ -21,4 +29,8 @@ Your project should be inside the `<your project name>` directory.  This will us
 
 ### Apache server
 
-Once your box is up and running, the HTTP server is listening on port `9090` 
+Once your box is up and running, the HTTP server is listening on port `9090`
+
+### phpMyAdmin
+
+You can access phpMyAdmin via `localhost:9090/phpmyadmin`
