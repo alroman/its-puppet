@@ -6,7 +6,7 @@ class php {
   }
 
   package {
-    [ "php-common", "php-mcrypt", "php-xml", "php-process", "php-intl", "php-mysql" ]:
+    [ "php-common", "php-mcrypt", "php-xml", "php-process", "php-intl", "php-mysql", "php-mbstring" ]:
     ensure => present,
     install_options   => [ { '--enablerepo' => 'remi' } ],
     require => [ Package[php] ]
