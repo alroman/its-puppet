@@ -1,6 +1,8 @@
 class phpmyadmin {
 	
-  package { phpMyAdmin: ensure => "4.1.3-1.el6.remi" }
+  package { phpMyAdmin: ensure => present,
+	install_options   => [ { '--enablerepo' => 'remi' }]
+  }
 	
   # make sure that config file is set
   file { "/etc/phpMyAdmin/config.inc.php":
