@@ -33,3 +33,13 @@ package {
   provider => 'gem',
   require => [ Package[rubygems] ]
 }
+
+# Git
+package {
+  git: ensure => installed
+}
+
+package {
+  bash-completion: ensure => installed,
+  require => [ Package[git] ]
+}
