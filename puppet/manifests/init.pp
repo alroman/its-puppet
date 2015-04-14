@@ -1,4 +1,4 @@
-include php, mysql, apache, phpmyadmin
+include php, mysql, apache, phpmyadmin, sites
 
 # Basic build tools
 package {

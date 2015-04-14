@@ -1,7 +1,7 @@
 class phpmyadmin {
 	
   package { phpMyAdmin: ensure => present,
-	install_options   => [ { '--enablerepo' => 'remi' }]
+	  install_options   => [ { '--enablerepo' => 'remi' }]
   }
 	
   # make sure that config file is set
