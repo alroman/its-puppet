@@ -6,6 +6,13 @@ class sites {
    	mode    => 644,
    	source  => "puppet:///modules/sites/iam-symfony.conf",
    	require => [ Package[httpd] ],
-   	notify	=> Service["httpd"],
-  }  	
+   	notify	=> Service["httpd"]
+  }
+
+  #create projects directory
+  exec {'mkdir projects': 
+	  command => 'mkdir /vagrant/projects',
+	  creates => '/vagrant/projects',
+	  path => '/usr/local:/usr/bin:/bin'
+	}	
 }
