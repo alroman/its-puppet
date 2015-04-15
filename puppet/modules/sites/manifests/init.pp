@@ -5,6 +5,7 @@ class sites {
    	group   => root,
    	mode    => 644,
    	source  => "puppet:///modules/sites/iam-symfony.conf",
+   	require => [ Package[httpd] ],
    	notify	=> Service["httpd"],
   }  	
 }
