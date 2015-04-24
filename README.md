@@ -1,6 +1,6 @@
 # its-puppet
 
-Basic Puppet configuration to start up a Vagrant dev box.
+Basic Puppet configuration to start up a LAMP dev box.
 
 ## Components
 
@@ -15,9 +15,15 @@ Basic Puppet configuration to start up a Vagrant dev box.
 Clone this repo, then go into the project folder you just created and start vagrant.
 
 ```sh
-git clone git@git.it.ucla.edu:alroman/iam-puppet.git iam-centos66
+git clone git@git.it.ucla.edu:alroman/iam-puppet.git centosvm
 cd <your project name>
 vagrant up
+```
+
+To run with VMWare provider
+
+```sh
+vagrant up --provider vmware_fusion
 ```
 
 Running that for the first time will provision the VM image and will take a while.  Vagrant is also configured to use NFS mount
