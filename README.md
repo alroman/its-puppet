@@ -1,6 +1,6 @@
 # its-puppet
 
-Basic Puppet configuration to start up a LAMP dev box.
+Basic Puppet configuration to start up a LAMP dev box.  Uses CentOS 6.6 base image: https://atlas.hashicorp.com/puppetlabs/boxes/centos-6.6-64-puppet
 
 ## Components
 
