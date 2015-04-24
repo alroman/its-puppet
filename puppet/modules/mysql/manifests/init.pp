@@ -3,12 +3,11 @@ class mysql {
   # Install mysql
   package { [ "mysql", "mysql-libs", "mysql-server" ]:
     ensure => present,
-    install_options   => [ { '--enablerepo' => 'remi' } ]
+    require => Yumrepo['remi-repo']
   }
 
   # Run mysql
-  service {
-    mysqld:
+  service { 'mysqld':
     enable    => true,
     ensure    => running,
     subscribe => Package["mysql-server"]

@@ -2,14 +2,13 @@ class php {
 
   package {'php':
     ensure  => present,
-    install_options   => [ { '--enablerepo' => 'remi' } ]
+    require => Yumrepo['remi-repo']
   }
 
   package {
     [ "php-common", "php-mcrypt", "php-xml", "php-process", "php-intl", "php-mysql", "php-mbstring" ]:
     ensure => present,
-    install_options   => [ { '--enablerepo' => 'remi' } ],
-    require => [ Package[php] ]
+    require => [ Package[php], Yumrepo['remi-repo'] ]
   }
 
   file { "/etc/php.ini":
@@ -17,6 +16,6 @@ class php {
     group => root,
     mode => 644,
     source => "puppet:///modules/php/php.ini",
-    require => [ Package[php] ]
+    require => Package[php]
   }
 }
