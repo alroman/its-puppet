@@ -8,6 +8,10 @@ Package {
 # Load repos before we load packages.
 Yumrepo <| |> -> Package <| |>
 
+resources { "firewall":
+  purge   => true
+}
+
 # Basic build tools
 package { 'gcc': 
   ensure => installed
