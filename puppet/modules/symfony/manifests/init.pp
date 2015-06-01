@@ -7,4 +7,10 @@ class symfony {
 	  path => '/usr/local:/usr/bin:/bin'
 	}
 
+	# exec { 'composer-install':
+	# 	command      => '/bin/echo',
+	# 	#path        => '/usr/bin:/usr/sbin:/bin:/usr/local/bin',
+	# 	#refreshonly => true,
+	# }
+
 }

@@ -6,7 +6,7 @@ class php {
   }
 
   package {
-    [ "php-common", "php-mcrypt", "php-xml", "php-process", "php-intl", "php-mysql", "php-mbstring" ]:
+    [ "php-common", "php-mcrypt", "php-xml", "php-process", "php-intl", "php-mysql", "php-mbstring", "php-ldap" ]:
     ensure => present,
     require => [ Package[php], Yumrepo['remi-repo'] ]
   }
