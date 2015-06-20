@@ -2,13 +2,13 @@ class php {
 
   package {'php':
     ensure  => present,
-    require => Yumrepo['remi-repo']
+    require =>  Yumrepo['remi-php55']
   }
 
   package {
-    [ "php-common", "php-mcrypt", "php-xml", "php-process", "php-intl", "php-mysql", "php-mbstring", "php-ldap" ]:
+    [ "php-common", "php-mcrypt", "php-xml", "php-process", "php-intl", "php-mysql", "php-mbstring", "php-ldap", "php-soap", "php-opcache" ]:
     ensure => present,
-    require => [ Package[php], Yumrepo['remi-repo'] ]
+    require => [ Package[php], Yumrepo['remi-repo'], Yumrepo['remi-php55']  ]
   }
 
   file { "/etc/php.ini":

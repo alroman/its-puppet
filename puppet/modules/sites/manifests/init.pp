@@ -1,10 +1,10 @@
 class sites {
   # make sure that apache conf file is set
-  file { "/etc/httpd/conf.d/iam-symfony.conf":
+  file { "/etc/httpd/conf.d/iam-gjallarhorn.conf":
    	owner   => root,
    	group   => root,
    	mode    => 644,
-   	source  => "puppet:///modules/sites/iam-symfony.conf",
+   	source  => "puppet:///modules/sites/iam-gjallarhorn.conf",
    	require => [ Package[httpd] ],
    	notify	=> Service["httpd"]
   }

@@ -13,42 +13,42 @@ resources { "firewall":
 }
 
 # Basic build tools
-package { 'gcc': 
+package { 'gcc':
   ensure => installed
 }
-package { 'make': 
+package { 'make':
   ensure => installed
 }
-package { 'ruby-devel': 
+package { 'ruby-devel':
   ensure => installed
 }
-package { 'man': 
+package { 'man':
   ensure => installed
 }
 
 # Vim
-package { 'vim-enhanced': 
+package { 'vim-enhanced':
   ensure => installed
 }
 
 # Ruby gems
-package { 'rubygems': 
+package { 'rubygems':
   ensure => installed,
   require => Package[ruby-devel]
 }
 
 # Compass framework
-package { 'compass': 
+package { 'compass':
   ensure => 'installed',
   provider => 'gem',
   require => Package[rubygems]
 }
 
 # Git & bash completion
-package { 'git': 
+package { 'git':
   ensure => installed
 }
-package { 'bash-completion': 
-  ensure => installed,
-  require => Package[git]
-}
+# package { 'bash-completion':
+#   ensure => installed,
+#   require => Package[git]
+# }
