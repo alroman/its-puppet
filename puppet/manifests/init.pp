@@ -8,10 +8,6 @@ Package {
 # Load repos before we load packages.
 Yumrepo <| |> -> Package <| |>
 
-resources { "firewall":
-  purge   => true
-}
-
 # Basic build tools
 package { 'gcc':
   ensure => installed
@@ -48,7 +44,7 @@ package { 'compass':
 package { 'git':
   ensure => installed
 }
-# package { 'bash-completion':
-#   ensure => installed,
-#   require => Package[git]
-# }
+package { 'bash-completion':
+  ensure => installed,
+  require => Package[git]
+}
