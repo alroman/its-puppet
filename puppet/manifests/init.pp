@@ -5,6 +5,11 @@ Package {
    allow_virtual => true,
 }
 
+service { "iptables":
+  ensure => "stopped",
+  hasstatus => "true",
+  status => "true",
+}
 # Load repos before we load packages.
 Yumrepo <| |> -> Package <| |>
 

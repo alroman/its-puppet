@@ -12,11 +12,12 @@ class apache {
   }
 
   # Allow HTTP port 80 connection
-  firewall { '200 allow outgoing http':
-    chain    => 'OUTPUT',
-    state    => ['NEW'],
-    dport    => '80',
-    proto    => 'tcp',
-    action   => 'accept',
-  }
+  # firewall { '200 allow outgoing http':
+  #   chain    => 'OUTPUT',
+  #   state    => ['NEW'],
+  #   dport    => '80',
+  #   proto    => 'tcp',
+  #   action   => 'accept',
+  # }
+
 }
