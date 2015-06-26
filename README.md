@@ -1,18 +1,10 @@
 # its-puppet
 
-Basic Puppet configuration to start up a LAMP dev box.  Uses CentOS 6.6 base image: https://atlas.hashicorp.com/puppetlabs/boxes/centos-6.6-64-puppet
-
-## Components
-
- - PHP + extensions
- - MySQL
- - Apache2
- - phpMyAdmin
- - Ruby/Compass
+CentOS environment with LAMP stack for Symfony development.
 
 ## Instructions
 
-Clone this repo, then go into the project folder you just created and start vagrant.
+Clone this repo.  Go into the repo folder and run `vagrant up`.  Example:
 
 ```sh
 git clone git@git.it.ucla.edu:alroman/iam-puppet.git centosvm
@@ -20,43 +12,22 @@ cd <your project name>
 vagrant up
 ```
 
-To run with VMWare provider
+The VM will run on VirtualBox and VMWare.  You may need to specify that you want to run with VMWare provider
 
 ```sh
 vagrant up --provider vmware_fusion
 ```
 
-Running that for the first time will provision the VM image and will take a while.  Vagrant is also configured to use NFS mount
-, this will require admin privileges in your local instance.
+The Vagrantfile is configured to use an NFS mount -- this will require admin privileges in your local instance.  On first run, the machine will be automatically provisioned with all the software you need to start developing.  By default, the forwarding port is `8000`, if there is a collision, Vagrant will select a different port.  In most cases, you'll be able to reach the server at `locahost:8000`.
 
-### Setting up a project
+## Sites
 
-Your project should be inside `iam-centos66` under the `projects` directory.  The `projects` directory
-is set to be ignored by `.gitignore`.  Clone your repos in that directory.
+The VM is configured with two pre-set sites.  `localhost:8000/boltools` and `localhost:8000/iamucla`.  These correspond to sites that you will set up in the `projects` folder.  You will have to clone these sites and update the dependencies via `composer`.
 
-#### Adding iam-symfony
+### Setting up the Symfony projects
 
-In the `iam-centos66/projects` dir, clone the iam-symfony project
-
-```sh
-git clone git@git.it.ucla.edu:alroman/iam-symfony.git
-```
-
-Go into the `iam-symfony` directory and install PHP Composer and run the package install:
-
-```sh 
-curl -sS https://getcomposer.org/installer | php
-php composer.phar install
-```
-
-That will download all the required packages.  You may be asked for project configuration; just press <enter>
-at the prompts to select defaults.  When that's done, browse to `localhost:9090/symfony/api_dev.php` and you'll
-see the symfony dev page.
-
-### Apache server
-
-Once your box is up and running, the HTTP server is listening on port `9090`
+`@todo`
 
 ### phpMyAdmin
 
-You can access phpMyAdmin via `localhost:9090/phpmyadmin`
+To view the local databases, view phpMyAdmin on `localhost:8000/phpmyadmin`
