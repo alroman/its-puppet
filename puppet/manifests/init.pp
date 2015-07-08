@@ -1,4 +1,4 @@
-include repos, php, mysql, apache, phpmyadmin, sites, symfony
+include repos, php, mysql, apache, phpmyadmin, sites, symfony, selenium
 
 # Removes deprecated msg warning.
 Package {
